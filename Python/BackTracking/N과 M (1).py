@@ -1,6 +1,6 @@
-# 자연수 N과 M이 주어졌을 때, 아래 조건을 만족하는 길이가 M인 수열을 모두 구하는 프로그램을 작성하시오.
 # https://www.acmicpc.net/problem/15649
 
+# 첫번째 문제풀이 
 n, m = map(int, input().split())
 
 number_list = [1 + i for i in range(n)]
@@ -19,12 +19,33 @@ def dfs():
              
 dfs()
 
+# 성능 개선 문제풀이 (선형 탐색 시간 배제)
+n, m = map(int, input().split())
+
+visited = [False] * n
+output = []
+
+def dfs(depth):
+    if depth == m: # 탈출 조건
+        print(*output) # *: list Unpacking 후 출력
+        return
+
+    for i in range(n): 
+        if not visited[i]:
+            visited[i] = True
+
+            output.append(i + 1)
+            dfs(depth + 1)
+            
+            visited[i] = False
+            output.pop()
+             
+dfs(0)
+
 # 외장함수 permutations을 이용한 방법
 from itertools import permutations
 
 n, m = map(int, input().split())
 
-list = [i + 1 for i in range(n)]
-
-for i in permutations(list, m):
+for i in permutations(range(1, n + 1), m):
     print(*i)
