@@ -19,7 +19,7 @@ def dfs():
              
 dfs()
 
-# 외장함수 permutation을 이용한 방법
+# 외장함수 permutations을 이용한 방법
 from itertools import permutations
 
 n, m = map(int, input().split())
