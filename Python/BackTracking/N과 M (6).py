@@ -1,17 +1,15 @@
-
 # https://www.acmicpc.net/problem/15655
 
 n, m = map(int, input().split())
 number_list = list(map(int, input().split()))
-
 number_list.sort()
 
 visited = [False] * n
 output = []
 
 def dfs(depth, idx):
-    if depth == m: # 탈출 조건
-        print(*output) # *: list Unpacking 후 출력
+    if depth == m: 
+        print(*output) 
         return
 
     for i in range(idx, n): 

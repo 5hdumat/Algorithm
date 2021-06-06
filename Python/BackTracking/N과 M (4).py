@@ -2,12 +2,10 @@
 
 n, m = map(int, input().split())
 
-visited = [False] * n
 output = []
 
 def dfs(depth, idx):
-    if depth == m: # 탈출 조건
-        print(*output) # *: list Unpacking 후 출력
+    if depth == m:
         return
 
     for i in range(idx, n): 

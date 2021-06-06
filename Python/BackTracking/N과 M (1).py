@@ -4,18 +4,18 @@
 n, m = map(int, input().split())
 
 number_list = [1 + i for i in range(n)]
-list = []
+output = []
 
 def dfs():
-    if len(list) == m:
-        print(*list) 
+    if len(output) == m:
+        print(*output) 
         return
 
     for i in number_list: 
-        if not i in list:
-            list.append(i)
+        if not i in output:
+            output.append(i)
             dfs()
-            list.pop()
+            output.pop()
              
 dfs()
 

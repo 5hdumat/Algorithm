@@ -8,8 +8,8 @@ visited = [False] * n
 output = []
 
 def dfs(depth):
-    if depth == m: # 탈출 조건
-        print(*output) # *: list Unpacking 후 출력
+    if depth == m: 
+        print(*output) 
         return
 
     for i in range(n): 
