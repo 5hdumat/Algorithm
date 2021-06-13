@@ -1,10 +1,11 @@
 # https://www.acmicpc.net/problem/1966
+import sys
 
-test_case = int(input())
+test_case = int(sys.stdin.readline())
 
 for _ in range(test_case):
-    n, m = map(int, input().split())
-    imp = list(map(int, input().split()))
+    n, m = map(int, sys.stdin.readline().split())
+    imp = list(map(int, sys.stdin.readline().split()))
     temp = list(range(n))
     temp[m] = 't'
     
