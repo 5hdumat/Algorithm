@@ -9,7 +9,7 @@ for _ in range(test_case):
     temp[m] = 't'
     
     order = 0
-    while (True):
+    while True:
         if imp[0] == max(imp):
             order += 1
             
