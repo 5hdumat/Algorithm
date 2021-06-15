@@ -1,39 +1,15 @@
-# https://www.acmicpc.net/problem/1316
+# https://www.acmicpc.net/problem/4673
 
-import sys
+num_list = list(range(1, 10001))
+construct_num = []
 
-# word_count = int(sys.stdin.readline())
-
-# count = 0
-# for _ in range(word_count):
-#     word = list(sys.stdin.readline().strip())
-
-#     if len(word) == 1:
-#         count += 1
-#     else:
-#         word_check = []
-#         for i in word:
-#             if not i in word_check or i == word_check[-1]:
-#                 word_check.append(i)
-                
-#                 if len(word_check) == len(word):
-#                     count += 1
-            
-# print(count)
-                    
-# 슬라이싱을 이용한 방법
-word_count = int(sys.stdin.readline())
-
-count = 0
-for _ in range(word_count):
-    word = sys.stdin.readline()
+for i in num_list: # 1부터 10000 범위 리스트 반복문에서 519 일 경우
+    for j in str(i): # 519를 5, 1, 9로 나눠 반복문 생성
+        i += int(j) # 519 + 5 + 1 + 9 는 생성자가 있는 수 이므로 이므로
     
-    for i in range(len(word)-1):
-        if word[i] != word[i+1]: # 연속적으로 나열되어있지 않으면서
-            if word[i] in word[i+1:]: # 포함관계에 있으면 
-                word_count -= 1 # word_count -1
-                break
-            
-print(word_count)
-        
+    construct_num.append(i) # construct_num에 append
 
+# 셀프 넘버 출력
+# 리스트 끼리 빼기 연산자가 실행되지 않기 때문에 set으로 형변환 후 sorted하여 정렬과 리스트 형변환을 동시에 한다.
+for i in sorted(set(num_list) - set(construct_num)):
+    print(i)
