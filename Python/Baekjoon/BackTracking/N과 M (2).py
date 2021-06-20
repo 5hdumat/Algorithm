@@ -22,7 +22,7 @@ def dfs(depth, idx):
             
 dfs(0, 0)
     
-# 외장함수 combinations을 이용한 방법
+# 내장함수 combinations을 이용한 방법
     
 from itertools import combinations
 

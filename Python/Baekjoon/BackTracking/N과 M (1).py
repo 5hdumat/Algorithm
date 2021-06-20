@@ -42,7 +42,7 @@ def dfs(depth):
              
 dfs(0)
 
-# 외장함수 permutations을 이용한 방법
+# 내장함수 permutations을 이용한 방법
 from itertools import permutations
 
 n, m = map(int, input().split())
