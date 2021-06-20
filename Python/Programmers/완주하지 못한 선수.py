@@ -84,3 +84,4 @@ def solution(participant, completion):
     return participant[-1]
 
 solution(["mislav", "stanko", "mislav", "ana"],["stanko", "ana", "mislav"])
+
