@@ -1,6 +1,6 @@
 # https://www.acmicpc.net/problem/1003
 
-# 비효율적인 재귀 연산으로 인한 시간초과 발생
+# 비효율적인 재귀 연산으로 인한 시간초과 발생 O(2 ** n)
 import sys
 
 test_case = int(sys.stdin.readline())
