@@ -6,6 +6,7 @@ output = []
 
 def dfs(depth, idx):
     if depth == m:
+        print(*output)
         return
 
     for i in range(idx, n): 
