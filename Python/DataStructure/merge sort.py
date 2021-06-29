@@ -39,6 +39,6 @@ def merge_sort(unsorted_list):
     left1 = merge_sort(left) ## 재귀를 이용하여 왼쪽 리스트를 다시 나눕니다.
     right1 = merge_sort(right) ## 오른쪽도 마찬가지로 다시 나눕니다.
     
-    print(left1, right1)
+    return merge(left1, right1)
 
 merge_sort(unsorted_list)
