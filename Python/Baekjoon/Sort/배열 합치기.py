@@ -1,19 +1,52 @@
-# https://programmers.co.kr/learn/courses/30/lessons/42748
+# https://www.acmicpc.net/problem/2504
 
-def solution(array, commands):
-    answer = []
+# 시간초과
+def merge(left, right):
+    i = 0
+    j = 0
+    sorted_list = []
     
-    for command in commands:
-        tmp = sorted(array[command[0]-1:command[1]])
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            sorted_list.append(left[i])
+            i += 1
+        else:
+            sorted_list.append(right[j])
+            j += 1
+            
+    while i < len(left):
+        sorted_list.append(left[i])
+        i += 1
+    
+    while j < len(right):
+        sorted_list.append(right[j])
+        j += 1
         
-        answer.append(tmp[command[2]-1])
+    return sorted_list
+    
+def merge_sort(unsorted_list):
+    if len(unsorted_list) <= 1:
+        return unsorted_list
+    
+    mid = len(unsorted_list) // 2
+    left = unsorted_list[:mid]
+    right = unsorted_list[mid:]
+    
+    left1 = merge_sort(left)
+    right1 = merge_sort(right)
+    
+    return merge(left1, right1)
         
-    return answer
+n, m = map(int, input().split())
 
-solution([1, 5, 2, 6, 3, 7, 4], [[2, 5, 3], [4, 4, 1], [1, 7, 3]])
+unsorted_list = list(map(int, input().split())) + list(map(int, input().split()))
 
-# 람다 표현식 활용
-def solution(array, commands):
-    return list(map(lambda x:sorted(array[x[0]-1:x[1]])[x[2]-1], commands))
+print(merge_sort(unsorted_list))
+    
+# 다른 문제 풀이 (공부를 위해서라면.. 비추)
+n, m = map(int, input().split())
 
-solution([1, 5, 2, 6, 3, 7, 4], [[2, 5, 3], [4, 4, 1], [1, 7, 3]])
+unsorted_list = list(map(int, input().split())) + list(map(int, input().split()))
+
+print(*sorted(unsorted_list))
+    
