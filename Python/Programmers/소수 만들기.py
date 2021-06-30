@@ -1,12 +1,12 @@
-import math
+import math 
 
 output = []
 cnt = 0
 
 def dfs(depth, idx, visited, nums):
     if depth == 3:
-        if is_number(sum(output)):
-            global cnt
+        if is_prime_number(sum(output)):
+            global cnt 
             cnt += 1
         return
     
@@ -20,11 +20,10 @@ def dfs(depth, idx, visited, nums):
             visited[i] = False
             output.pop()
             
-def is_number(n):
-    for i in range(2, int(math.sqrt(n)) + 1):
-        if n % i == 0:
+def is_prime_number(num):
+    for i in range(2, int(math.sqrt(num)) + 1):
+        if num % i == 0:
             return False
-        
     return True
 
 def solution(nums):
@@ -34,4 +33,4 @@ def solution(nums):
     
     print(cnt)
     
-solution([1,2,7,6,4])
+solution([1,3,4,5,2,7,6,4])

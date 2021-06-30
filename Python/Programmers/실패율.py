@@ -17,10 +17,9 @@ def solution(N, stages):
             output[i] = (process_cnt / attempt_cnt)
 
     output = sorted(output.keys(), key=lambda x : output[x], reverse=True)
-    # output는 dictionary이므로 sorted에 output에 그냥 넘기면 output의 keys가 들어갑니다. 
-    # keys는 생략이 가능합니다. 
+    # output는 dictionary이므로 sorted에 output을 그냥 넘기면 output의 keys가 들어갑니다. (keys는 생략이 가능합니다.)
     # 거기에 lambda는 기준을 output는[x]: 즉 value로 정렬한다는 뜻입니다. 그래서 key가 출력되게 됩니다.
-
+ 
     return output
 
 solution(5, [2, 1, 2, 6, 2, 4, 3, 3])
