@@ -1,4 +1,4 @@
-# https://www.acmicpc.net/problem/2504
+# https://www.acmicpc.net/problem/11728
 
 # 시간초과
 def merge(left, right):
