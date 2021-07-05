@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/two-sum/
 
-브루트포스 문제풀이 (O(n^2)) :: 4140 ms
+# 브루트포스 문제풀이 (O(n^2)) :: 4140 ms
 from typing import List
 
 class Solution:
