@@ -30,4 +30,4 @@ class Solution:
     
 s = Solution()
 
-print(s.reverseString(['h', 'e', 'l', 'l', 'o']))
+print(['h', 'e', 'l', 'l', 'o'])
