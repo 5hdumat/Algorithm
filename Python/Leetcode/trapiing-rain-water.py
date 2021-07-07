@@ -4,22 +4,27 @@ from typing import List
 
 class Solution:
     def trapTwoPoiner(self, height: List[int]) -> int:
+        if not height:
+            return 0
+
         water_bucket = 0
         left, right = 0, len(height) - 1
-        left_point, right_point = height[left], height[right]
-        
+        left_max, right_max = height[left], height[right]
+
         while left < right:
-            left_point, right_point = max(left_point, height[left]),  max(right_point, height[right])
-            
-            if left_point <= right_point:
-                water_bucket += left_point - height[left]
+            left_max, right_max = max(left_max, height[left]), max(right_max, height[right])
+
+            if left_max <= right_max:
+                water_bucket += left_max - height[left]
                 left += 1
-                
             else:
-                water_bucket += right_point - height[right]  
+                water_bucket += right_max - height[right]
                 right -= 1
-                
-        return water_bucket          
-        
+
+        return water_bucket
+
+    def trapStack(self, height: List[int]) -> int:
+        pass
+
 a = Solution()
 a.trapTwoPoiner([0,1,0,2,1,0,1,3,2,1,2,1])
