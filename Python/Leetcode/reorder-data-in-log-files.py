@@ -13,10 +13,10 @@ class Solution:
             else:
                 letters.append(log)
                 
-        letters.sort(key = lambda x : (x.split()[1:], x.split()[0]))
+        letters.sort(key=lambda x: (x.split()[1:], x.split()[0]))
         
         return letters + digits
     
 a = Solution()
 
-a.reorderLogFiles(["dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"])
+a.reorderLogFiles(["dig1 8 1 5 1", "let1 art can", "dig2 3 6", "let2 own kit dig", "let3 art zero"])
