@@ -3,14 +3,13 @@
 from typing import List
 
 class Solution:
-    # TwoPoiner
     def trap(self, height: List[int]) -> int:
         if not height:
             return 0
 
-        water_bucket = 0
-        left, right = 0, len(height) - 1
+        left, right = 0, len(height)-1
         left_max, right_max = height[left], height[right]
+        water_bucket = 0
 
         while left < right:
             left_max, right_max = max(left_max, height[left]), max(right_max, height[right])
@@ -25,4 +24,4 @@ class Solution:
         return water_bucket
 
 a = Solution()
-a.trap([0,1,0,2,1,0,1,3,2,1,2,1])
+a.trap([4,2,0,3,2,5])
