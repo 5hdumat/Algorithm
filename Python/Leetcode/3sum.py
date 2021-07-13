@@ -28,19 +28,20 @@ class Solution:
         nums.sort()
         output = []
 
-        print(nums)
-        for i in range(len(nums)-2):
+        for i in range(len(nums) - 2):
             if i > 0 and nums[i] == nums[i-1]:
                 continue
 
-            left, right = i+1, len(nums)-1
+            left, right = i+1, len(nums) - 1
             while left < right:
-                num = nums[i] + nums[left] + nums[right]
+                sum = nums[i] + nums[left] + nums[right]
 
-                if num < 0:
+                if sum < 0:
                     left += 1
-                elif num > 0:
+
+                elif sum > 0:
                     right -= 1
+
                 else:
                     output.append([nums[i], nums[left], nums[right]])
 
@@ -56,4 +57,4 @@ class Solution:
         return output
 
 a = Solution()
-a.threeSumTwoPointer([0,0,0])
+a.threeSumTwoPointer([-1,0,1,2,-1,-4])
