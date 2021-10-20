@@ -1,4 +1,4 @@
-# 내 문제풀이
+# 내 문제풀이 (n^2)
 n, m = map(int, input().split())
 a = list(map(int, input().split()))
 p1 = 0
@@ -18,7 +18,7 @@ while p1 <= len(a) and p2 <= len(a):
 
 print(cnt)
 
-# 강의 문제 풀이
+# 강의 문제 풀이 (n)
 
 n, m = map(int, input().split())
 a = list(map(int, input().split()))
@@ -31,17 +31,20 @@ cnt = 0
 while True:
     if tot < m:
         if rt < n:
+            print(tot, "+", a[rt])
             tot += a[rt]
             rt += 1
         else:
             break
 
     elif tot == m:
-        cnt += 1
+        print(tot, "-", a[lt])
+        cnt += 13
         tot -= a[lt]
         lt += 1
 
     else:
+        print(tot, "-", a[lt])
         tot -= a[lt]
         lt += 1
 
