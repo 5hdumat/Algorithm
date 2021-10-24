@@ -27,10 +27,10 @@ round_half_even의 경우 정확하게 4.50000과 같이 값이 정확히 하프
 
 예)
 a = 4.500
-print(rount(a)) # 4
+print(round(a)) # 4
 
 a = 4.5111
-print(rount(a)) # 5
+print(round(a)) # 5
 
 round()가 아닌
 
