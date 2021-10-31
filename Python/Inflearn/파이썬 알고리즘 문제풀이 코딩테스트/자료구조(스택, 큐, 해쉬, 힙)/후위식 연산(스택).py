@@ -1,3 +1,6 @@
+'''
+stack: LIFO
+'''
 a = input()
 stack = []
 
