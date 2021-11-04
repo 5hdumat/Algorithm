@@ -25,6 +25,5 @@ while True:
             print(-1)  # 출력할 자료가 없으면 -1를 출력한다.
         else:
             print(hq.heappop(a))
-
     else:
         hq.heappush(a, n)
