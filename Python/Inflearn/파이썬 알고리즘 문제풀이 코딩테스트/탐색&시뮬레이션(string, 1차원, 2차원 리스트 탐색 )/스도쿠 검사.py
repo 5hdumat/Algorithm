@@ -62,6 +62,7 @@ def check(a):
 
             for k in range(3):
                 for s in range(3):
+                    print(i*3+k, j*3+s)
                     check3[a[i*3+k][j*3+s]] = 1
 
             if sum(check3) != 9:

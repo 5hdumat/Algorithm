@@ -45,6 +45,8 @@ dy = [0, 1, 0, -1]
 
 for i in range(1, n + 1):
     for j in range(1, n + 1):
+        # a[0][1] a[1][2] a[2][1] a[1][0]
+        # 봉우리(a[i][j])가 감싸고 있는 지역(a[i + dx[k]][j+dy[k]])보다 높으면 cnt += 1
         if all(a[i][j] > a[i + dx[k]][j+dy[k]] for k in range(4)):
             cnt += 1
 
