@@ -32,7 +32,7 @@ if __name__ == "__main__":
     n = int(sys.stdin.readline())
     c = list(map(int, sys.stdin.readline().split()))
     m = int(sys.stdin.readline())
-    # c.sort(reverse=True)
+
     res = 9999999999999
 
     dfs(0, 0)
@@ -44,7 +44,11 @@ import sys
 
 def dfs(l, sum):
     global res
-    if sum > m or l > res:
+
+    if sum > m:
+        return
+
+    if  l > res:
         return
 
     if sum == m:
