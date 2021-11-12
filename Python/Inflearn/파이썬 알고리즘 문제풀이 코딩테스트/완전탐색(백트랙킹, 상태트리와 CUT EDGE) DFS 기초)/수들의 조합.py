@@ -9,7 +9,7 @@ def dfs(l, s):
     global cnt
 
     if l == k:
-        if sum(res) % 6 == 0:
+        if sum(res) % m == 0:
             cnt += 1
         return
     else:
@@ -30,4 +30,28 @@ ch = [0] * n
 cnt = 0
 
 dfs(0, 0)
+print(cnt)
+
+
+# 강의 문제 풀이
+
+
+def dfs(l, s, sum):
+    global cnt
+
+    if l == k:
+        if sum % m == 0:
+            cnt += 1
+            return
+    else:
+        for i in range(s, n):
+            dfs(l + 1, i + 1, sum + a[i])
+
+
+n, k = map(int, input().split())
+a = list(map(int, input().split()))
+m = int(input())
+cnt = 0
+
+dfs(0, 0, 0)
 print(cnt)
