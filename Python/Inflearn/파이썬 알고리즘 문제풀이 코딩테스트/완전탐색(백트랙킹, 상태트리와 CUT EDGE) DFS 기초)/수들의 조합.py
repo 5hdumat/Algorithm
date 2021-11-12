@@ -55,3 +55,21 @@ cnt = 0
 
 dfs(0, 0, 0)
 print(cnt)
+
+'''
+순열이나 조합을 자동으로 구해주는 itertools 라이브러리 활용 (combinations)
+'''
+
+import itertools as it
+
+n, k = map(int, input().split())
+a = list(map(int, input().split()))
+m = int(input())
+cnt = 0
+
+# a라는 리스트에서 k개만 뽑아 조합을 만들어준다.
+for x in it.combinations(a, k):
+    if sum(x) % m == 0:
+        cnt += 1
+
+print(cnt)
