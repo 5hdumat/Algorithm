@@ -15,7 +15,6 @@ cnt = 1
 while dq:
     now = dq.popleft()
 
-
     for next in (now - 1, now + 1, now + 5):
         if 0 < next <= max:
             if ch[next] == 0:
@@ -28,4 +27,3 @@ while dq:
             dq.clear()
             print(dis[next])
             break
-
