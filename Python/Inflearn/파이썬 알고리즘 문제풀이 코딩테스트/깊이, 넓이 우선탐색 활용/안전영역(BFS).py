@@ -7,6 +7,7 @@
 8 9 5 2 7
 '''
 # BFS 문제풀이
+import sys
 from collections import deque
 
 dx = [-1, 0, 1, 0]
@@ -48,8 +49,14 @@ for rain in range(100):
 
 print(max(res))
 
-
 # 강의 문제 풀이(DFS)
+
+dx = [-1, 0, 1, 0]
+dy = [0, 1, 0, -1]
+# 재귀함수 시간이 10^6을 넘어가면 자동으로 종료시킴
+sys.setrecursionlimit(10 ** 6)
+
+
 def DFS(x, y, h):
     ch[x][y] = 1
     for i in range(4):
@@ -61,8 +68,6 @@ def DFS(x, y, h):
 
 
 if __name__ == "__main__":
-    dx = [-1, 0, 1, 0]
-    dy = [0, 1, 0, -1]
 
     n = int(input())
     cnt = 0
