@@ -8,7 +8,6 @@
 '''
 
 
-# 이건 도착점부터 출발한다.
 def DFS(x, y):
     if dy[x][y] > 0:
         return dy[x][y]
@@ -17,17 +16,14 @@ def DFS(x, y):
         return arr[x][y]
 
     else:
-        if y == 0:
-            dy[x][y] = DFS(x - 1, y) + arr[x][y]
-
-        elif x == 0:
+        if x == 0:
             dy[x][y] = DFS(x, y - 1) + arr[x][y]
-
+        elif y == 0:
+            dy[x][y] = DFS(x - 1, y) + arr[x][y]
         else:
             dy[x][y] = min(DFS(x - 1, y), DFS(x, y - 1)) + arr[x][y]
 
         return dy[x][y]
-
 
 if __name__ == "__main__":
     n = int(input())
