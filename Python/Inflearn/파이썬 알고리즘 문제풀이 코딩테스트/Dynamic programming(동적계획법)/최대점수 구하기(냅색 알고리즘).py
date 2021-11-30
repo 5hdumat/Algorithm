@@ -28,7 +28,7 @@ if __name__ == '__main__':
 print(dy[n + 1][-1])
 
 # 1차원 해결법 (시간복잡도 낮음)
-if __name__ == '__main__':
+if __name__ == "__main__":
     n, m = map(int, input().split())
     dy = [0] * (m + 1)
 
