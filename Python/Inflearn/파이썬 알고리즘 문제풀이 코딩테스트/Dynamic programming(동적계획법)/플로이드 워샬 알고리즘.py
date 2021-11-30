@@ -31,6 +31,7 @@ if __name__ == "__main__":
             for j in range(1, n + 1):
                 dy[i][j] = min(dy[i][j], dy[i][k] + dy[k][j])
 
+    # 출력
     for i in range(1, n + 1):
         for j in range(1, n + 1):
             if dy[i][j] == 9999:
