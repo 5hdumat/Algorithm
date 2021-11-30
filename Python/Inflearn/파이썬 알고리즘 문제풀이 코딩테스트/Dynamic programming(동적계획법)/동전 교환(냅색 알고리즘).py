@@ -30,7 +30,6 @@ dy = [1000] * (m + 1)
 dy[0] = 0
 for i in range(n):
     for j in range(coin[i], m + 1):
-        if i == 1 or i == 0:
-            dy[j] = min(dy[j], dy[j - coin[i]] + 1)
+        dy[j] = min(dy[j], dy[j - coin[i]] + 1)
 
 print(dy[m])
