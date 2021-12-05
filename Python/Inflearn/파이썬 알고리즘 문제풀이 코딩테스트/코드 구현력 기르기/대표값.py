@@ -59,3 +59,24 @@ for index, value in enumerate(score_list):
         result = index + 1
 
 print(avg, result)
+
+# 복습
+n = int(input())
+arr = list(map(int, input().split()))
+avg = int((sum(arr) / n) + 0.5)
+
+dis = 999999
+res = 0
+val = 0
+for i in range(n):
+    tmp = abs(avg - arr[i])
+
+    if tmp < dis:
+        dis = tmp
+        val = arr[i]
+        res = i + 1
+    elif tmp == dis and arr[i] > val:
+        val = arr[i]
+        res = i + 1
+
+print(avg, res)
