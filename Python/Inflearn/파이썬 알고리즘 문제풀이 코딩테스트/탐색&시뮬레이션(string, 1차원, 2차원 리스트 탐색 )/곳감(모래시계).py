@@ -12,6 +12,8 @@
 '''
 
 # 내 문제풀이
+from collections import deque
+
 n = int(input())
 persimmons = [list(map(int, input().split())) for _ in range(n)]
 m = int(input())
@@ -53,17 +55,17 @@ for i in range(m):
 
     if t == 0:
         for _ in range(k):
-            a[h-1].append(a[h - 1].pop(0))
+            a[h - 1].append(a[h - 1].pop(0))
     else:
         for _ in range(k):
             a[h - 1].insert(0, a[h - 1].pop())
 
 res = 0
 s = 0
-e = n-1
+e = n - 1
 
 for i in range(n):
-    for j in range(s, e+1):
+    for j in range(s, e + 1):
         res += a[i][j]
 
     if i < n // 2:
@@ -75,4 +77,35 @@ for i in range(n):
 
 print(res)
 
+# 복습
 
+n = int(input())
+arr = [deque(map(int, input().split())) for _ in range(n)]
+m = int(input())
+
+for _ in range(m):
+    a, b, c = map(int, input().split())
+    tmp = arr[a - 1]
+
+    if b == 0:
+        for _ in range(c):
+            tmp.append(tmp.popleft())
+    else:
+        for _ in range(c):
+            tmp.insert(0, tmp.pop())
+
+lt = 0
+rt = n
+res = 0
+for i in range(n):
+    res += sum(list(arr[i])[lt:rt])
+
+    if i < n // 2:
+        lt += 1
+        rt -= 1
+
+    else:
+        lt -= 1
+        rt += 1
+
+print(res)

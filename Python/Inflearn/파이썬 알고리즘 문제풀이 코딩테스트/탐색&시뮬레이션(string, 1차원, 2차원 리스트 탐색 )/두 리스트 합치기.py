@@ -69,3 +69,11 @@ if p2 < m:
 
 for x in c:
     print(x, end=' ')
+
+
+
+
+
+
+
+

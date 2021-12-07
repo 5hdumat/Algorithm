@@ -16,12 +16,12 @@ largest = -2147000000
 for i in range(n):
     sum1 = sum2 = 0
 
-    for j in range(n):              
+    for j in range(n):
         sum1 += a[i][j]
         sum2 += a[j][i]
 
     sum3 += a[i][i]
-    sum4 += a[i][n-i-1]
+    sum4 += a[i][n - i - 1]
 
     if largest < sum1:
         largest = sum1
@@ -59,7 +59,7 @@ sum1 = sum2 = 0
 
 for i in range(n):
     sum1 += a[i][i]
-    sum2 += a[i][n-i-1]
+    sum2 += a[i][n - i - 1]
 
 if largest < sum1:
     largest = sum1
@@ -69,4 +69,34 @@ if largest < sum2:
 
 print(largest)
 
+# 복습
 
+n = int(input())
+arr = [list(map(int, input().split())) for _ in range(n)]
+largest = 0
+for i in range(n):
+    sum1 = sum2 = 0
+
+    for j in range(n):
+        sum1 += arr[i][j]
+        sum2 += arr[j][i]
+
+    if largest < sum1:
+        largest = sum1
+
+    if largest < sum2:
+        largest = sum2
+
+sum1 = sum2 = 0
+
+for i in range(n):
+    sum1 += arr[i][i]
+    sum2 += arr[i][n - i - 1]
+
+    if largest < sum1:
+        largest = sum1
+
+    if largest < sum2:
+        largest = sum2
+
+print(largest)
