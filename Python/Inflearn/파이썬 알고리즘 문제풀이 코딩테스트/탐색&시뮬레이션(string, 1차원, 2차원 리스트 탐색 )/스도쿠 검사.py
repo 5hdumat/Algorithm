@@ -10,6 +10,7 @@
 8 5 4 3 9 6 1 2 7
 '''
 
+
 # 내 문제 풀이
 def check(a):
     for i in range(9):
@@ -37,11 +38,13 @@ def check(a):
 
     return True
 
+
 a = [list(map(int, input().split())) for _ in range(9)]
 if check(a):
     print("YES")
 else:
     print("NO")
+
 
 # 강의 문제 풀이
 def check(a):
@@ -62,16 +65,66 @@ def check(a):
 
             for k in range(3):
                 for s in range(3):
-                    print(i*3+k, j*3+s)
-                    check3[a[i*3+k][j*3+s]] = 1
+                    print(i * 3 + k, j * 3 + s)
+                    check3[a[i * 3 + k][j * 3 + s]] = 1
 
             if sum(check3) != 9:
                 return False
 
     return True
 
+
 a = [list(map(int, input().split())) for _ in range(9)]
 if check(a):
+    print("YES")
+else:
+    print("NO")
+
+'''
+1 4 3 6 2 8 5 7 9
+5 7 2 1 3 9 4 6 8
+9 8 6 7 5 4 2 3 1
+3 9 1 5 4 2 7 8 6
+4 6 8 9 1 7 3 5 2
+7 2 5 8 6 3 9 1 4
+2 3 7 4 8 1 6 9 5
+6 1 9 2 7 5 8 4 3
+8 5 4 3 9 6 1 2 7
+'''
+
+# 복습
+
+def check(sdoku):
+    dx = [-1, -1, 0, 1, 1, 1, 0, -1]
+    dy = [0, 1, 1, 1, 0, -1, -1, -1]
+
+    for i in range(1, 9, 3):
+        for j in range(1, 9, 3):
+            tmp = set()
+            tmp.add(sdoku[i][j])
+
+            for k in range(8):
+                tmp.add(sdoku[i + dx[k]][j + dy[k]])
+
+            if len(tmp) != 9:
+                return False
+
+    for i in range(9):
+        tmp1 = []
+        tmp2 = []
+        for j in range(9):
+            tmp1.append(sdoku[i][j])
+            tmp2.append(sdoku[j][i])
+
+        if len(tmp1) != 9 or len(tmp2) != 9:
+            return False
+    else:
+        return True
+
+
+sdoku = [list(map(int, input().split())) for _ in range(9)]
+
+if check(sdoku):
     print("YES")
 else:
     print("NO")
