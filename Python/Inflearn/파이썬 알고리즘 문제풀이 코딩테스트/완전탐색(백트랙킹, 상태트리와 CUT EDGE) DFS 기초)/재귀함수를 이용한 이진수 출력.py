@@ -19,10 +19,24 @@ def dfs(x):
     if x == 0:
         return  # 리턴만 쓰면 함수를 종료하라는 의미가 되기도 함
     else:
-        dfs(x//2)
+        dfs(x // 2)
         print(x % 2, end='')
 
 
 if __name__ == "__main__":
     n = int(input())
     dfs(n)
+
+
+# 복습
+
+def DFS(x):
+    if x == 0:
+        return
+    else:
+        DFS(x // 2)
+        print(x % 2, end='')
+
+
+n = int(input())
+DFS(n)
