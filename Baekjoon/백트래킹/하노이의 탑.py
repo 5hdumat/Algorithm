@@ -23,4 +23,4 @@ if n <= 20:
         print(f'{x} {y}')
 else:
     # 이동 횟수 2**n-1
-    print((2 ** n) -1)
+    print((2 ** n) - 1)
