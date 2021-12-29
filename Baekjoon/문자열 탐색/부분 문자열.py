@@ -1,5 +1,9 @@
 # https://www.acmicpc.net/problem/16916
 
+'''
+ZABCABXACCADEF
+ABCABD
+'''
 def km_match(txt, pat):
     pt = 1
     pp = 0
@@ -16,8 +20,8 @@ def km_match(txt, pat):
             pp = skip[pp]
 
     pt = pp = 0
-
     while pt < len(txt) and pp < len(pat):
+        print(txt[pt], pt, pat[pp], pp)
         if txt[pt] == pat[pp]:
             pt += 1
             pp += 1

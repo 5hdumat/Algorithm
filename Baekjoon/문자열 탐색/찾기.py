@@ -1,6 +1,6 @@
 # https://www.acmicpc.net/problem/1786
 
-def bm_match(txt, pat):
+def kmp_match(txt, pat):
     global cnt, res
 
     pt = 1
@@ -41,7 +41,7 @@ pat = input()
 
 cnt = 0
 res = []
-bm_match(txt, pat)
+kmp_match(txt, pat)
 
 print(cnt)
 print(*res)
