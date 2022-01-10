@@ -10,11 +10,11 @@ class Solution:
         left_max = height[left]
         right_max = height[right]
 
-        while left < right:
+        while left <= right:
             left_max = max(left_max, height[left])
             right_max = max(right_max, height[right])
 
-            if left_max <= right_max:
+            if left_max < right_max:
                 bucket += left_max - height[left]
                 left += 1
             else:
@@ -45,4 +45,4 @@ class Solution:
 
 
 s = Solution()
-s.trap_stack([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1])
+s.trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1])
