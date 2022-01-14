@@ -28,8 +28,6 @@ class Solution:
             next, head.next = head.next, prev
             prev, head = head, next
 
-        return prev
-
     def reverseList2(self, head: Optional[ListNode]) -> Optional[ListNode]:
         def reverse(node, prev=None):
             if not node:

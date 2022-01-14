@@ -12,6 +12,7 @@ class ListNode:
         self.val = val
         self.next = next
 
+
 '''
 pass 0
 
@@ -100,6 +101,8 @@ None
 None
 
 '''
+
+
 class Solution:
     def dump(self, l1):
         while l1:
@@ -108,8 +111,7 @@ class Solution:
         print(None)
 
     def mergeTwoLists(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        if (not l1) or (l2 and l1.val > l2.val):
-            print(not l1)
+        if not l1 or (l2 and l1.val > l2.val):
             l1, l2 = l2, l1
 
         if l1:
@@ -117,9 +119,10 @@ class Solution:
 
         return l1
 
+
 s = Solution()
 
-input1 = ListNode(1, ListNode(2, ListNode(4, None)))
+input1 = ListNode(1, ListNode(1, ListNode(1, None)))
 input2 = ListNode(1, ListNode(3, ListNode(4, None)))
 
 lists = s.mergeTwoLists(input1, input2)
