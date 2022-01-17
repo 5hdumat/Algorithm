@@ -31,7 +31,7 @@ class Solution:
             end.next = end.next.next
             start.next.next = tmp
 
-        return root
+        return root.next
 
 
 
