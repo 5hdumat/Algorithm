@@ -28,6 +28,8 @@ class Solution:
             next, head.next = head.next, prev
             prev, head = head, next
 
+        self.dump(prev)
+
     def reverseList2(self, head: Optional[ListNode]) -> Optional[ListNode]:
         def reverse(node, prev=None):
             if not node:
@@ -42,5 +44,5 @@ class Solution:
 s = Solution()
 
 input = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, None)))))
-lists = s.reverseList2(input)
+lists = s.reverseList(input)
 s.dump(lists)
