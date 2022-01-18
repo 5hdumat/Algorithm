@@ -26,9 +26,10 @@ class Solution:
 
         while head:
             next, head.next = head.next, prev
-            prev, head = head, next
+            head, prev = next, head
 
-        self.dump(prev)
+        # self.dump(prev)
+        return prev
 
     def reverseList2(self, head: Optional[ListNode]) -> Optional[ListNode]:
         def reverse(node, prev=None):

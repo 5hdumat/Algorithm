@@ -15,18 +15,15 @@ class ListNode:
 
 
 class Solution:
-    def dump(self, l1):
-        while l1:
-            print(l1.val, end=' -> ')
-            l1 = l1.next
+    def dump(self, head):
+        while head:
+            print(head.val, end=' -> ')
+            head = head.next
         print(None)
 
     def oddEvenList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        if head is None:
-            return None
-
-        odd = head  # 홀
-        even = head.next  # 짝
+        odd = head
+        even = head.next
         even_head = even
 
         while even and even.next:

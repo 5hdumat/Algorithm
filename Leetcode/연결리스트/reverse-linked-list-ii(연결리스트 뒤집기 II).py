@@ -20,10 +20,11 @@ class Solution:
     def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
         root = start = ListNode(None)
         root.next = head
+
         for _ in range(left - 1):
             start = start.next
-        else:
-            end = start.next
+
+        end = start.next
 
         for _ in range(right - left):
             tmp = start.next
@@ -34,18 +35,6 @@ class Solution:
         return root.next
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 s = Solution()
-input = ListNode(5)
-s.reverseBetween(input, 1, 1)
+input = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, None)))))
+s.reverseBetween(input, 2, 4)
