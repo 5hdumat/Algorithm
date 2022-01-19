@@ -5,17 +5,17 @@ class Solution:
     def removeDuplicateLettersNonRecur(self, s: str) -> str:
         counter, seen, stack = collections.Counter(s), set(), []
 
-        for x in s:
-            counter[x] -= 1
+        for char in s:
+            counter[char] -= 1
 
-            if x in seen:
+            if char in seen:
                 continue
 
-            while stack and x < stack[-1] and counter[stack[-1]] > 0:
+            while stack and char < stack[-1] and counter[stack[-1]] > 0:
                 seen.remove(stack.pop())
 
-            stack.append(x)
-            seen.add(x)
+            stack.append(char)
+            seen.add(char)
 
         return ''.join(stack)
 
