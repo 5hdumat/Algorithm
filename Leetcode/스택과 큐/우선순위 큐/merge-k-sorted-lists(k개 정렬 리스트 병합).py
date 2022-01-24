@@ -41,7 +41,7 @@ class Solution:
             if result.next:
                 heapq.heappush(heap, (result.next.val, idx, result.next))
 
-        self.dump(root.next)
+        return root.next
 
 s = Solution()
 s.mergeKLists([ListNode(1, ListNode(4, ListNode(5, None))),
