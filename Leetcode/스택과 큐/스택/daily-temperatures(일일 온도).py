@@ -5,15 +5,14 @@ from typing import List
 class Solution:
     def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
         res = [0] * len(temperatures)
-        stk = []
+        stack = []
+
         for i, v in enumerate(temperatures):
-            while stk and v > temperatures[stk[-1]]:
-                last = stk.pop()
+            while stack and v > temperatures[stack[-1]]:
+                last = stack.pop()
                 res[last] = i - last
 
-            stk.append(i)
-
-        return res
+            stack.append(i)
 
 s = Solution()
 s.dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73])

@@ -15,7 +15,6 @@ class ListNode:
 
 
 class Solution:
-
     def dump(self, l1):
         while l1:
             print(l1.val, end=' -> ')
