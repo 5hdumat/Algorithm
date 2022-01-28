@@ -38,3 +38,42 @@ dy = [0, 1, 0, -1]
 s = Solution()
 s.numIslands(
     [["1", "1", "1"], ["0", "1", "0"], ["1", "1", "1"]])
+
+# class Solution:
+#     def dfs(self, x, y, grid):
+#         for i in range(4):
+#             tx = x + dx[i]
+#             ty = y + dy[i]
+#
+#             if grid[tx][ty] == 1:
+#                 grid[tx][ty] = 0
+#                 self.dfs(tx, ty, grid)
+#
+#         return 1
+#
+#     def numIslands(self, grid: List[List[str]]) -> int:
+#         res = 0
+#         m, n = len(grid), len(grid[0])
+#
+#         for i in range(m):
+#             for j in range(n):
+#                 grid[i][j] = int(grid[i][j])
+#
+#         grid.insert(0, [0] * n)
+#         grid.append([0] * n)
+#
+#         for i in range(m + 2):
+#             grid[i].insert(0, 0)
+#             grid[i].append(0)
+#
+#         for i in range(m + 2):
+#             for j in range(n + 2):
+#                 if grid[i][j] == 1:
+#                     grid[i][j] = 0
+#                     res += self.dfs(i, j, grid)
+#
+#         return res
+#
+#
+# dx = [-1, 0, 1, 0]
+# dy = [0, 1, 0, -1]
