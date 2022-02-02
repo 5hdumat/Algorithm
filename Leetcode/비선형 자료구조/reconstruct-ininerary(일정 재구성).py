@@ -20,6 +20,7 @@ class Solution:
         res = []
         _dfs('JFK')
 
+        print(res[::-1])
         return res[::-1]
 
     def findItineraryStack(self, tickets: List[List[str]]) -> List[str]:
@@ -37,5 +38,6 @@ class Solution:
 
         print(route[::-1])
 
+
 s = Solution()
-s.findItineraryStack([["JFK", "SFO"], ["JFK", "ATL"], ["SFO", "ATL"], ["ATL", "JFK"], ["ATL", "SFO"]])
+s.findItinerary([["JFK", "KUL"], ["JFK", "NRT"], ["NRT", "JFK"]])
