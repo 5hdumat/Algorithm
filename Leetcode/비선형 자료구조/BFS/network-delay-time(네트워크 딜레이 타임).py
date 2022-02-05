@@ -12,23 +12,20 @@ class Solution:
         for u, v, w in times:
             graph[u].append((v, w))
 
-        # 시간순 최소힙 구현을 위해 시간, 종점 순으로 출발지 초기화
         Q = [[0, k]]
-        dict = collections.defaultdict(list)
+        dist = collections.defaultdict(list)
 
         while Q:
             time, node = heapq.heappop(Q)
 
-            # dict는 종점까지의 최단거리 경로이므로 이미 존재한다면 넘어간다.
-            if node not in dict:
-                dict[node] = time
-
+            if node not in dist:
+                dist[node] = time
                 for v, w in graph[node]:
                     tmp = time + w
-                    heapq.heappush(Q, (tmp, v))
+                    heapq.heappush(Q, [tmp, v])
 
-        if len(dict) == n:
-            return max(dict.values())
+        if len(dist) == n:
+            return max(dist.values())
 
         return -1
 
