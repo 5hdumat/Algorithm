@@ -19,7 +19,7 @@ class Solution:
 
         Q = collections.deque([root])
         depth = 0
-
+        
         while Q:
             depth += 1
 
