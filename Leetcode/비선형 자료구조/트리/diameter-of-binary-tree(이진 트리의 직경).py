@@ -22,7 +22,7 @@ class Solution:
             left = _dfs(node.left)
             right = _dfs(node.right)
 
-            self.longest = max(self.longest, left + right + 2)
+            self.longest = max(self.longest, (left + right) + 2)
             return max(left, right) + 1
 
         _dfs(root)
