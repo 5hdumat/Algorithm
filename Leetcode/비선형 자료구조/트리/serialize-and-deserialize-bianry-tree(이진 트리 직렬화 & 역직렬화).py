@@ -12,17 +12,9 @@ class TreeNode:
 
 
 class Codec:
-
     def serialize(self, root: TreeNode) -> str:
-        """Encodes a tree to a single string.
-
-
-        :type root: TreeNode
-        :rtype: str
-        """
-
-        res = []
         Q = collections.deque([root])
+        res = []
 
         while Q:
             node = Q.popleft()
@@ -49,20 +41,17 @@ class Codec:
         while Q:
             node = Q.popleft()
 
-            # 왼쪽 노드
             if nodes[child] is not '#':
                 node.left = TreeNode(nodes[child])
                 Q.append(node.left)
             child += 1
 
-            # 오른쪽 노드
             if nodes[child] is not '#':
                 node.right = TreeNode(nodes[child])
                 Q.append(node.right)
             child += 1
 
-        return root.val
-
+        return root
 
 # Your Codec object will be instantiated and called as such:
 root = TreeNode(1, TreeNode(2), TreeNode(3, TreeNode(4), TreeNode(5)))
