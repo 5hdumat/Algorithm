@@ -5,36 +5,32 @@ from typing import List
 
 class Solution:
     def findMinHeightTrees(self, n: int, edges: List[List[int]]) -> List[int]:
-        if n <= 1:
-            return []
-
         graph = collections.defaultdict(list)
 
         for a, b in edges:
             graph[a].append(b)
             graph[b].append(a)
 
-        leaves = []
+        leaf_node = []
         for x in graph:
             if len(graph[x]) == 1:
-                leaves.append(x)
+                leaf_node.append(x)
 
-        # 노드가 2개 이상일때만 반복(이 문제의 최단거리 트리 루트는 1개 혹은 2개 일수도 있다.)
         while n > 2:
-            n -= len(leaves)
+            n -= len(leaf_node)
+
             cur = []
+            for x in leaf_node:
+                parent = graph[x].pop()
+                graph[parent].remove(x)
 
-            for leave in leaves:
-                pop = graph[leave].pop()
-                graph[pop].remove(leave)
+                if len(graph[parent]) == 1:
+                    cur.append(parent)
 
-                if len(graph[pop]) == 1:
-                    cur.append(pop)
+            leaf_node = cur
 
-            leaves = cur
-
-        return leaves
-
+        return leaf_node
+    
 
 '''
            x4 - 5x
