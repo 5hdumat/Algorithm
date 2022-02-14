@@ -40,6 +40,7 @@ print(dfs_stack(1))
 
 def bfs(start_v):
     discoverd = [start_v]
+
     q = deque()
     q.append(start_v)
 

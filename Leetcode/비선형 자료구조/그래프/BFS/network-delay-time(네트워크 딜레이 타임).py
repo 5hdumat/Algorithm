@@ -15,14 +15,18 @@ class Solution:
         Q = [[0, k]]
         dist = collections.defaultdict(list)
 
+        print(graph)
         while Q:
             time, node = heapq.heappop(Q)
 
+            print(time, node, dist)
             if node not in dist:
                 dist[node] = time
                 for v, w in graph[node]:
                     tmp = time + w
                     heapq.heappush(Q, [tmp, v])
+
+                print(Q)
 
         if len(dist) == n:
             return max(dist.values())
