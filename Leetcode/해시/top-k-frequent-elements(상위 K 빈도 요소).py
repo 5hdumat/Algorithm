@@ -13,6 +13,7 @@ class Solution:
         heap = []
         res = []
 
+        print(counter)
         for x in counter.items():
             # 최대 힙을 구해야 하므로 음수 삽입
             heapq.heappush(heap, (-x[1], x[0]))
@@ -20,8 +21,9 @@ class Solution:
         for _ in range(k):
             res.append(heapq.heappop(heap)[1])
 
+        print(res)
         return res
 
 
 s = Solution()
-s.topKFrequentPython([1, 1, 1, 2, 2, 2, 2, 3], 2)
+s.topKFrequent([1, 1, 1, 2, 2, 2, 2, 3], 2)
