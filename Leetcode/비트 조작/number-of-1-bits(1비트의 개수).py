@@ -20,3 +20,4 @@ class Solution(object):
 
 s = Solution()
 s.hammingWeight(0b00000000000000000000000010000000)
+
