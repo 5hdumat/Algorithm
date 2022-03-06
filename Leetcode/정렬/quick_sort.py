@@ -1,4 +1,5 @@
 def quick_sort(x, lo, hi):
+    print(x, lo, hi)
     def partition(lo, hi):
         pivot = x[hi]
         left = lo

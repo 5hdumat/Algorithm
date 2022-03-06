@@ -1,4 +1,5 @@
 def move(no, x, y):
+    print(res, no, x, y)
     if n == 1:
         res.append((x, y))
         return

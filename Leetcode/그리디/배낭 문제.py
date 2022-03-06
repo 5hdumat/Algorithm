@@ -22,6 +22,7 @@ def greedy(cargo, capacity):
 
     tmp.sort(reverse=True)
 
+    print(tmp)
     max_value: float = 0
     for x in tmp:
         if capacity - x[2] >= 0:
