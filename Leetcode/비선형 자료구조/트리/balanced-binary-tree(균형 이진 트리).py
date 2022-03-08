@@ -37,4 +37,4 @@ root2 = TreeNode(1, TreeNode(2, TreeNode(3, TreeNode(4), TreeNode(4)), TreeNode(
 root3 = TreeNode(1, TreeNode(2, TreeNode(3, TreeNode(4))), TreeNode(2, None, TreeNode(3, None, TreeNode(4))))
 
 s = Solution()
-s.isBalanced(root3)
+print(s.isBalanced(root2))
