@@ -7,7 +7,7 @@ class Solution(object):
         if not nums:
             return 0
 
-        if len(nums) <= 2:
+        if len(nums) <= 3:
             return max(nums)
 
         dp = collections.OrderedDict()
