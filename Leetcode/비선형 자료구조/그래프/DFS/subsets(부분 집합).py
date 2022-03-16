@@ -22,8 +22,9 @@ class Solution:
         res = []
         _dfs(0, 0)
 
+        print(res)
         return res
 
 
 s = Solution()
-s.subsets([0])
+s.subsets([0, 1, 2])
