@@ -33,7 +33,6 @@ class Solution:
 
         _dfs(0)
 
-        print(res)
         return res
 
 
