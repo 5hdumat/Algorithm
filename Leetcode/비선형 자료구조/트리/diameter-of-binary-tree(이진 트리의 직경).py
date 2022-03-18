@@ -23,6 +23,7 @@ class Solution:
             right = _dfs(node.right)
 
             self.longest = max(self.longest, (left + right) + 2)
+            print(left, right, self.longest, (left + right) + 2, max(left, right) + 1)
             return max(left, right) + 1
 
         _dfs(root)

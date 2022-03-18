@@ -11,9 +11,13 @@ def solution(width, height, diagonals):
             else:
                 tables[i][j] = tables[i - 1][j] + tables[i][j - 1]
 
+    for x in tables:
+        print(x)
     answer = 0
 
     for dx, dy in diagonals:
+        # print(dx - 1, dy, width - dx, height - dy + 1)
+        # print(dx, dy - 1, width - dx + 1, height - dy)
         answer += tables[dx - 1][dy] * tables[width - dx][height - dy + 1]
         answer += tables[dx][dy - 1] * tables[width - dx + 1][height - dy]
 
@@ -22,4 +26,4 @@ def solution(width, height, diagonals):
 
 solution(2, 2, [[1, 1], [2, 2]])
 solution(3, 2, [[1, 2], [3, 2], [3, 1]])
-solution(51, 37, [[17, 19]])
+# solution(51, 37, [[17, 19]])

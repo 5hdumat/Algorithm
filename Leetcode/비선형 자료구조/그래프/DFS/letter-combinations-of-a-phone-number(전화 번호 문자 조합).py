@@ -32,8 +32,10 @@ class Solution:
         tmp = []
 
         _dfs(0)
+
+        print(res)
         return res
 
 
 s = Solution()
-s.letterCombinations("")
+s.letterCombinations("23")

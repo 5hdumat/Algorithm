@@ -4,6 +4,8 @@
 import collections
 
 dp = collections.defaultdict(list)
+
+
 def bottom_up(n):
     dp[0] = 0
     dp[1] = 1
@@ -16,9 +18,10 @@ def bottom_up(n):
 
 bottom_up(5)
 
-
 # 하향식 (메모이제이션, 하위 문제에 대한 정답을 계산했는지 확인해가며 문제를 재귀로 풀어나가는 방식)
 dp = collections.defaultdict(list)
+
+
 def top_down(n):
     if n <= 1:
         return n
@@ -28,7 +31,6 @@ def top_down(n):
 
     dp[n] = top_down(n - 1) + top_down(n - 2)
     return dp[n]
-
 
 
 top_down(5)
