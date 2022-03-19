@@ -25,6 +25,7 @@ class Solution(object):
             # that is that there must be at least "n" units of time between any two same tasks.
             res += n - sub_count + 1
 
+        print(res)
         return res
 
 

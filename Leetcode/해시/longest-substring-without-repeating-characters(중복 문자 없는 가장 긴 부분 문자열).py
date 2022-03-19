@@ -24,6 +24,7 @@ class Solution:
         res = ''
 
         while rp <= len(s):
+            print(collections.Counter(s[lp:rp]))
             most_common = collections.Counter(s[lp:rp]).most_common()[0][1]
 
             if most_common == 1:
@@ -37,4 +38,4 @@ class Solution:
 
 
 s = Solution()
-s.lengthOfLongestSubstring("tmmzmmmzutx")
+s.lengthOfLongestSubstring2("tmmzmmmzutx")
