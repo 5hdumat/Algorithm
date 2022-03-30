@@ -19,6 +19,7 @@ class Solution:
                          expand(i, i + 2),
                          key=len)
 
+        print(result)
         return result
 
 

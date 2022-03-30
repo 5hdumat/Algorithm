@@ -24,6 +24,7 @@ class Solution(object):
                     left += 1
                     missing += 1
 
+        print( s[start: end])
         return s[start: end]
 
 

@@ -15,10 +15,13 @@ class Solution(object):
             counter[char] += 1
             most = counter.most_common(1)[0][1]
 
+            print(counter)
+            print(right, left,most)
             if right - left - most > k:
                 counter[s[left]] -= 1
                 left += 1
 
+        print(right - left)
         return right - left
 
 

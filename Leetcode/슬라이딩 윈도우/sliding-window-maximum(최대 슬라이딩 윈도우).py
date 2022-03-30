@@ -23,6 +23,8 @@ class Solution(object):
                 slow += 1
 
             fast += 1
+
+        print(res)
         return res
 
     # 타임아웃 발생
@@ -59,5 +61,5 @@ class Solution(object):
 
 
 s = Solution()
-# s.maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3)
-s.maxSlidingWindow([1, -1], 1)
+s.maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3)
+# s.maxSlidingWindow([1, -1], 1)
