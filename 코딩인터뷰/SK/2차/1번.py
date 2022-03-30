@@ -20,7 +20,7 @@ def solution(goods):
 
             else:
                 if good[lp:rp] not in inherence:
-                    if inherence and len(inherence[0]) > len(word):
+                    if inherence and limit > len(word):
                         inherence.clear()
 
                     if len(word) <= limit:
@@ -36,6 +36,7 @@ def solution(goods):
 
         goods.insert(index, good)
 
+    print(answer)
     return answer
 
 
