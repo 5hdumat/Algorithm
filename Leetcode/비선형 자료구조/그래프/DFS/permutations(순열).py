@@ -26,7 +26,7 @@ class Solution:
 
         _dfs(0)
 
-        # print(res)
+        print(res)
         return res
 
     def permute2(self, nums: List[int]) -> List[List[int]]:
@@ -48,6 +48,7 @@ class Solution:
 
         dfs(nums)
 
+        print(results)
         return results
 
     def permute3(self, nums: List[int]) -> List[List[int]]:
