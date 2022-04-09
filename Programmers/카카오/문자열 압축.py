@@ -37,6 +37,7 @@ def solution(s):
 
         answer = min(answer, len(''.join(tmp)))
 
+    print(answer)
     return answer
 
 

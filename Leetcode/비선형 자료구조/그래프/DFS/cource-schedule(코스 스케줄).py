@@ -38,5 +38,5 @@ class Solution:
 
 
 s = Solution()
-finish = s.canFinish(2, [[1, 0], [2, 0]])
+finish = s.canFinish(2, [[1, 0], [0, 1]])
 print(finish)
